@@ -98,10 +98,11 @@ public class PackageLegalMojo extends AbstractMojo {
         final ResourceFinder resourceFinder = this.getResourceFinder();
         this.copyLegalFile(resourceFinder, this.noticeFile, targetOutputDir, "NOTICE");
         this.copyLegalFile(resourceFinder, this.licenseFile, targetOutputDir, "LICENSE");
+        logger.info("Copied NOTICE and LICENSE to: " + targetOutputDir);
     }
 
     /**
-     * Copy a file
+     * Copy a file to the specified directory
      */
     protected void copyLegalFile(ResourceFinder resourceFinder, String legalFile, File targetOutputDir, String outputFileName) throws MojoFailureException {
         final Log logger = this.getLog();
@@ -115,7 +116,7 @@ public class PackageLegalMojo extends AbstractMojo {
             throw new MojoFailureException("Failed to copy '" + resourceUrl + "' to '" + destFile + "'", e);
         }
         
-        logger.info("Copied '" + resourceUrl + "' to '" + destFile + "'");
+        logger.debug("Copied '" + resourceUrl + "' to '" + destFile + "'");
     }
 
     /**
