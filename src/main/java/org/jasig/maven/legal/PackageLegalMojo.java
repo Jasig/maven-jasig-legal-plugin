@@ -107,7 +107,14 @@ public class PackageLegalMojo extends AbstractMojo {
     protected void copyLegalFile(ResourceFinder resourceFinder, String legalFile, File targetOutputDir, String outputFileName) throws MojoFailureException {
         final Log logger = this.getLog();
         
-        final URL resourceUrl = resourceFinder.findResource(legalFile);
+        final URL resourceUrl;
+        try {
+            resourceUrl = resourceFinder.findResource(legalFile);
+        }
+        catch (MojoFailureException e) {
+            throw new MojoFailureException("Could not find required " + outputFileName + " file: " + legalFile, e);
+        }
+        
         final File destFile = new File(targetOutputDir, outputFileName);
         try {
             FileUtils.copyStreamToFile(new URLInputStreamFacade(resourceUrl), destFile);
