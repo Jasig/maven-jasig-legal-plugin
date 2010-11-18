@@ -19,7 +19,7 @@
 
     <groupId>org.jasig.maven</groupId>
     <artifactId>maven-jasig-legal-plugin</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <name>Jasig Legal Plugin</name>
@@ -32,9 +32,9 @@
     </prerequisites>
     
     <scm>
-        <connection>scm:svn:https://source.jasig.org/sandbox/maven-jasig-legal-plugin/tags/maven-jasig-legal-plugin-1.0.2</connection>
-        <developerConnection>scm:svn:https://source.jasig.org/sandbox/maven-jasig-legal-plugin/tags/maven-jasig-legal-plugin-1.0.2</developerConnection>
-        <url>https://developer.jasig.org/source/browse/jasigsvn/sandbox/maven-jasig-legal-plugin/tags/maven-jasig-legal-plugin-1.0.2</url>
+        <connection>scm:svn:https://source.jasig.org/sandbox/maven-jasig-legal-plugin/trunk</connection>
+        <developerConnection>scm:svn:https://source.jasig.org/sandbox/maven-jasig-legal-plugin/trunk</developerConnection>
+        <url>https://developer.jasig.org/source/browse/jasigsvn/sandbox/maven-jasig-legal-plugin/trunk</url>
     </scm>
 
     <distributionManagement>
